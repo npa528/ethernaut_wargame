@@ -47,12 +47,11 @@ const { assert, expect } = require("chai")
       })
 
       it("call hackdelegation", async () => {
-
         const accounts = await ethers.getSigners();
         const hacker = accounts[5];
 
         const delegationOwner_before = await delegation.owner()
-        
+
         const tx = await hackDelegation.hackDelegation();
 
         const delegationOwner_after = await delegation.owner()
