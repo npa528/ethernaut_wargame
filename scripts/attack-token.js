@@ -7,7 +7,6 @@ async function main() {
   let deployer
   let player
 
-
   deployer = (await getNamedAccounts()).deployer
   player = (await getNamedAccounts()).player
 
@@ -16,7 +15,7 @@ async function main() {
 
   let balance
   balance = await token.balanceOf(deployer);
-  console.log("cp1 balance: ", balance.toNumber()); //58.424634007577468392 
+  console.log("cp1 balance: ", balance.toNumber()); //58.424634007577468392
 
   await token.transfer(player, 21);
 

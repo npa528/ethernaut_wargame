@@ -1,0 +1,40 @@
+{
+  "address": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+  "abi": [],
+  "transactionHash": "0xe1161203de8ce197278be181522554dda73347458b9f0cf67c5bea9b9a4fd5b4",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+    "transactionIndex": 0,
+    "gasUsed": "67066",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7d257fca2735591175df7c049da8361b841a2149291913e65bad0cdda7078899",
+    "transactionHash": "0xe1161203de8ce197278be181522554dda73347458b9f0cf67c5bea9b9a4fd5b4",
+    "logs": [],
+    "blockNumber": 9,
+    "cumulativeGasUsed": "67066",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "0f54bb88d1acdff7cac9c801fe837ef8",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Force.sol\":\"Force\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Force.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ncontract Force {/*\\r\\n\\r\\n                   MEOW ?\\r\\n         /\\\\_/\\\\   /\\r\\n    ____/ o o \\\\\\r\\n  /~____  =\\u00f8= /\\r\\n (______)__m_m)\\r\\n\\r\\n*/}\\r\\n\",\"keccak256\":\"0xc57f3f17079f2d068d5ea8b8fe6c3aac442f092440865587bb3042ef5889ef60\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212206511be597b4aae6538ad5295cff91d5b257f63fa40e404718db148e132095a0864736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212206511be597b4aae6538ad5295cff91d5b257f63fa40e404718db148e132095a0864736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
