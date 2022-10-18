@@ -17,8 +17,12 @@ const attackReentrance = new ethers.Contract(ATTACK_REENT, contractABI.abi, sign
 
 
 async function main() {
-  const value = ethers.utils.parseEther("0.001")
-  const tx = await attackReentrance.donateAndWithdraw({value: value});
+
+  // const value = ethers.utils.parseEther("0.001")
+  // const tx = await attackReentrance.donateAndWithdraw({value: value});
+
+  // withdraw
+  const tx = await attackReentrance.withdrawAll();
 
 }
 
