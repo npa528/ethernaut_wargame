@@ -1,7 +1,7 @@
 const { deployments, ethers, getNamedAccounts } = require("hardhat")
 const { assert, expect } = require("chai")
 
-  describe("CoinFlip", async function() {
+  describe("CoinFlip", function() {
     let coinFlip
     let hackCoinFlip
     let deployer
